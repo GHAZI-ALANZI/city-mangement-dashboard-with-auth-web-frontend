@@ -1,0 +1,42 @@
+.reports-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.chart-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✨ Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
