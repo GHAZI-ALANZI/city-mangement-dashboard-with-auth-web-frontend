@@ -1,1 +1,13 @@
-<p>city-sections works!</p>
+<div class="city-container">
+    <h2>City Sectors</h2>
+  
+    <div class="card-container">
+      <a *ngFor="let section of sections" class="glass-card" [href]="section.link" target="_blank">
+        <div class="card-content">
+          <i class="bi" [ngClass]="section.icon"></i>
+          <p>{{ section.name }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  

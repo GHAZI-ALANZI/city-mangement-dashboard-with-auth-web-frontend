@@ -1,0 +1,154 @@
+/* 🌆 City Container */
+.city-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    perspective: 2000px;
+    overflow: hidden;
+  }
+  
+  /* ✨ Welcome Text */
+  .welcome-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #ffcc00, #ff66cc);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .welcome-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+  
+  /* 🌇 City Skyline */
+  .city-skyline {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2vw;
+    margin-top: 30px;
+    transform-style: preserve-3d;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    padding: 10px;
+    max-width: 100%;
+  }
+  
+  /* 🏢 3D Skyscrapers */
+  .skyscraper {
+    position: relative;
+    width: 120px;
+    height: 40vh;
+    transform-style: preserve-3d;
+    transform: rotateY(20deg) translateZ(-20px);
+    min-width: 80px;
+  }
+  
+  /* 🔹 Different Heights */
+  .building-1 { height: 38vh; }
+  .building-2 { height: 47vh; }
+  .building-3 { height: 42vh; }
+  
+  /* 🎭 3D Sides */
+  .side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* 🌍 Positioning Sides */
+  .front { transform: translateZ(50px); background: linear-gradient(to bottom, #3c3c3c, #1a1a1a); }
+  .back { transform: rotateY(180deg) translateZ(50px); background: linear-gradient(to bottom, #2e2e2e, #111); }
+  .left { transform: rotateY(-90deg) translateZ(50px); background: linear-gradient(to right, #444, #222); }
+  .right { transform: rotateY(90deg) translateZ(50px); background: linear-gradient(to left, #555, #222); }
+  
+  /* 🏙️ Improved Windows */
+  .side::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1) 5%,
+      rgba(255, 255, 255, 0.3) 10%,
+      transparent 15%
+    ),
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.1) 5%,
+      rgba(255, 255, 255, 0.3) 10%,
+      transparent 15%
+    );
+    opacity: 0.9;
+  }
+  
+  /* 🌟 Animated Window Lights */
+  .side::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 0, 0.9) 10%,
+      transparent 20%
+    );
+    animation: flicker 3s infinite alternate;
+  }
+  
+  /* 🏠 Roof with Perspective */
+  .roof {
+    position: absolute;
+    width: 100%;
+    height: 5vw;
+    background: linear-gradient(to bottom, #3b3b3b, #1a1a1a);
+    transform: rotateX(90deg) translateY(-50%);
+    box-shadow: inset 0px -10px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 🔄 Animated Window Flicker Effect */
+  @keyframes flicker {
+    0% { opacity: 0.8; }
+    100% { opacity: 1; }
+  }
+  
+  /* 📱 Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .skyscraper {
+      width: 100px;
+      height: 35vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .city-skyline {
+      flex-wrap: nowrap;
+      overflow-x: hidden;
+      padding: 10px;
+    }
+  
+    .skyscraper {
+      width: 90px;
+      height: 30vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .skyscraper {
+      width: 80px;
+      height: 25vh;
+    }
+  }
+  

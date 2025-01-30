@@ -1,0 +1,107 @@
+.city-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    perspective: 1500px;
+    overflow: hidden;
+    text-align: center;
+    color: white;
+  }
+  
+  /* 🌆 City Section Title */
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* 📦 Card Container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  /* ✨ Glassmorphic Magic Cards */
+  .glass-card {
+    width: 200px;
+    height: 260px;
+    border-radius: 15px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    animation: floatEffect 6s infinite ease-in-out;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  }
+  
+  /* ✨ Magic Hover Effects */
+  .glass-card:hover {
+    transform: rotateY(15deg) rotateX(5deg) scale(1.1);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* 🔮 Floating Animation */
+  @keyframes floatEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+  
+  /* 🌟 Glowing Edges */
+  .glass-card::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.5), transparent);
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .glass-card:hover::before {
+    opacity: 1;
+  }
+  
+  /* 🎨 Magic Gradient Backgrounds */
+  .glass-card:nth-child(1) { background: linear-gradient(45deg, #ff416c, #ff4b2b); }
+  .glass-card:nth-child(2) { background: linear-gradient(45deg, #1d976c, #93f9b9); }
+  .glass-card:nth-child(3) { background: linear-gradient(45deg, #ff512f, #f09819); }
+  .glass-card:nth-child(4) { background: linear-gradient(45deg, #4776E6, #8E54E9); }
+  .glass-card:nth-child(5) { background: linear-gradient(45deg, #FF3CAC, #784BA0); }
+  
+  /* 📱 Responsive Design */
+  @media (max-width: 768px) {
+    .glass-card {
+      width: 160px;
+      height: 220px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .glass-card {
+      width: 140px;
+      height: 200px;
+      font-size: 0.9rem;
+    }
+  }
+  
