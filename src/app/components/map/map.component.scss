@@ -1,0 +1,108 @@
+/* 📍 Magic Map Container */
+.map-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+/* 🔎 Magic Search Bar */
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 7px;
+  border-radius: 8px;
+  gap: 10px;
+  margin-bottom: 15px;
+
+  input {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    outline: none;
+    background: rgba(245, 244, 244, 0.543);
+    color: rgb(255, 254, 254);
+  }
+
+  button {
+    padding: 10px;
+    background: linear-gradient(90deg, #ff0066, #ff3300);
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 100, 0, 0.5);
+
+    i {
+      margin-right: 5px;
+    }
+
+    &:hover {
+      background: linear-gradient(90deg, #ff3300, #ff0066);
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+/* 🗺️ Magic Map */
+#map {
+  width: 100%;
+  height: 90%;
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.484);
+  overflow: hidden;
+}
+
+/* 🌟 Magic Marker Animation */
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* 📍 Responsive Design */
+@media (max-width: 768px) {
+  .map-container {
+    padding: 10px;
+  }
+
+  .search-bar {
+    width: 90%;
+  }
+
+  #map {
+    height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #map {
+    height: 200px;
+  }
+}

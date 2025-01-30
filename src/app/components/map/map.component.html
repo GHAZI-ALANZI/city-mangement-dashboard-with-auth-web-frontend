@@ -1,1 +1,15 @@
-<p>map works!</p>
+<div class="map-container">
+    <h2>City Map</h2>
+  
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search address in Vienna..." (keyup.enter)="searchLocation(searchInput.value)" #searchInput>
+      <button (click)="searchLocation(searchInput.value)">
+        <i class="bi bi-search"></i> Find
+      </button>
+    </div>
+  
+    <!-- Magic Map with Animated Marker -->
+    <div id="map"></div>
+  </div>
+  
