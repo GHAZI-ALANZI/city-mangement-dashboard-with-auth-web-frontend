@@ -1,1 +1,37 @@
-<p>users works!</p>
+<div class="users-container">
+  <h2>User Management</h2>
+
+  <!-- 🎛 User Actions -->
+  <div class="user-actions">
+    <button (click)="addUser()" class="user-btn magic-btn"><i class="bi bi-person-plus"></i> Add User</button>
+    <button (click)="banUser()" class="user-btn magic-btn"><i class="bi bi-person-x"></i> Ban/Unban User</button>
+    <button (click)="deleteUser()" class="user-btn magic-btn"><i class="bi bi-trash"></i> Delete User</button>
+  </div>
+
+  <!-- 🔍 User List -->
+  <div class="user-list">
+    <h3>Users</h3>
+    <!-- 📊 User Table -->
+  <div class="table-responsive">
+    <table class="table table-dark table-striped table-hover">
+      <thead>
+        <tr>
+          <th class="text-primary">Username</th>
+          <th class="text-primary">Role</th>
+          <th class="text-primary">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td class="fw-bold">{{ user.username }}</td>
+          <td>{{ user.role === 'Admin' ? 'Admin' : 'FullAdmin' }}</td>
+          <td [ngClass]="{'text-success': !user.isBanned, 'text-danger': user.isBanned}">
+            {{ user.isBanned ? 'Banned' : 'Active' }}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+

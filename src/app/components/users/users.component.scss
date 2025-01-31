@@ -1,0 +1,85 @@
+.users-container {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(145deg, #1e1e1e, #343434);
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  /* ✨ Magic Buttons */
+  .user-actions {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .magic-btn {
+    background: linear-gradient(90deg, #ff5722, #ff9800);
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(255, 100, 0, 0.3);
+  }
+  
+  .magic-btn:hover {
+    background: linear-gradient(90deg, #ff9800, #ff5722);
+    transform: scale(1.05);
+  }
+
+
+
+  .status-active{
+    color: #43e608;
+  }
+
+  .status-banned{
+    color: #e40808;
+  }
+
+
+  
+  /* 📜 User List */
+  .user-list {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .user-list h3 {
+    text-align: center;
+  }
+  
+  .magic-list-item {
+    animation: slideIn 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  
