@@ -1,0 +1,262 @@
+// Sidebar Variables
+$sidebar-width: 247px;
+$sidebar-text-color: white;
+$transition-speed: 0.3s;
+$hover-color: rgba(255, 255, 255, 0.1);
+$active-color: #ff5722;
+$icon-size: 1.4rem;
+$border-radius: 10px;
+
+// Sidebar Styling
+.sidebar {
+  width: $sidebar-width;
+  background-image: linear-gradient(216deg, rgba(77, 77, 77,0.05) 0%, rgba(77, 77, 77,0.05) 25%,rgba(42, 42, 42,0.05) 25%, rgba(42, 42, 42,0.05) 38%,rgba(223, 223, 223,0.05) 38%, rgba(223, 223, 223,0.05) 75%,rgba(36, 36, 36,0.05) 75%, rgba(36, 36, 36,0.05) 100%),linear-gradient(44deg, rgba(128, 128, 128,0.05) 0%, rgba(128, 128, 128,0.05) 34%,rgba(212, 212, 212,0.05) 34%, rgba(212, 212, 212,0.05) 57%,rgba(25, 25, 25,0.05) 57%, rgba(25, 25, 25,0.05) 89%,rgba(135, 135, 135,0.05) 89%, rgba(135, 135, 135,0.05) 100%),linear-gradient(241deg, rgba(55, 55, 55,0.05) 0%, rgba(55, 55, 55,0.05) 14%,rgba(209, 209, 209,0.05) 14%, rgba(209, 209, 209,0.05) 60%,rgba(245, 245, 245,0.05) 60%, rgba(245, 245, 245,0.05) 69%,rgba(164, 164, 164,0.05) 69%, rgba(164, 164, 164,0.05) 100%),linear-gradient(249deg, rgba(248, 248, 248,0.05) 0%, rgba(248, 248, 248,0.05) 32%,rgba(148, 148, 148,0.05) 32%, rgba(148, 148, 148,0.05) 35%,rgba(202, 202, 202,0.05) 35%, rgba(202, 202, 202,0.05) 51%,rgba(181, 181, 181,0.05) 51%, rgba(181, 181, 181,0.05) 100%),linear-gradient(92deg, hsl(214,0%,11%),hsl(214,0%,11%));  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(255, 255, 255, 0.523);
+  transition: left $transition-speed ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0px 22px 22px 0px ;
+
+  .sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: color $transition-speed;
+
+      &:hover {
+        color: $active-color;
+      }
+    }
+  }
+
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 3px;
+
+    li {
+      margin: 15px 0;
+
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.6vmax;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: color $transition-speed;
+
+        i {
+          font-size: 1.6vmax;
+        }
+
+        &.active,
+        &:hover {
+          color: $active-color;
+        }
+      }
+    }
+  }
+
+  // Settings inside Sidebar
+  .settings {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    
+    // li {
+    //   margin: 10px 0;
+      
+    //   a {
+    //     color: white;
+    //     font-size: 1rem;
+    //     display: flex;
+    //     align-items: center;
+    //     gap: 10px;
+    //     transition: color $transition-speed;
+
+    //     &:hover {
+    //       color: $active-color;
+    //     }
+    //   }
+    // }
+
+    .language-switch {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+
+ 
+    }
+
+   
+  }
+   
+  .btn{
+    font-size: 1vmax;
+  }
+  // Clock Styling
+  .sidebar-clock {
+    position: relative;
+    margin-left: 0%;
+    width: 11dvb;
+    height: 11dvb;
+    background-image: radial-gradient(circle at center center, transparent 0%,rgb(0,0,0) 85%),linear-gradient(78deg, rgba(192, 192, 192,0.05) 0%, rgba(192, 192, 192,0.05) 50%,rgba(60, 60, 60,0.05) 50%, rgba(60, 60, 60,0.05) 100%),linear-gradient(227deg, rgba(97, 97, 97,0.05) 0%, rgba(97, 97, 97,0.05) 50%,rgba(52, 52, 52,0.05) 50%, rgba(52, 52, 52,0.05) 100%),linear-gradient(240deg, rgba(98, 98, 98,0.05) 0%, rgba(98, 98, 98,0.05) 50%,rgba(249, 249, 249,0.05) 50%, rgba(249, 249, 249,0.05) 100%),linear-gradient(187deg, rgba(1, 1, 1,0.05) 0%, rgba(1, 1, 1,0.05) 50%,rgba(202, 202, 202,0.05) 50%, rgba(202, 202, 202,0.05) 100%),linear-gradient(101deg, rgba(61, 61, 61,0.05) 0%, rgba(61, 61, 61,0.05) 50%,rgba(254, 254, 254,0.05) 50%, rgba(254, 254, 254,0.05) 100%),linear-gradient(176deg, rgba(237, 237, 237,0.05) 0%, rgba(237, 237, 237,0.05) 50%,rgba(147, 147, 147,0.05) 50%, rgba(147, 147, 147,0.05) 100%),linear-gradient(304deg, rgba(183, 183, 183,0.05) 0%, rgba(183, 183, 183,0.05) 50%,rgba(57, 57, 57,0.05) 50%, rgba(57, 57, 57,0.05) 100%),radial-gradient(circle at center center, hsl(351,4%,12%),hsl(351,4%,12%));    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    text {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+    }
+
+    line {
+      transition: transform 0.5s ease-in-out;
+    }
+  }
+}
+
+
+
+/* 🔮 Smaller Magic Calendar */
+.small-magic-calendar {
+  width: auto;
+  height: auto;
+  padding: 7%;
+  border-radius: 8px;
+  background-image: linear-gradient(90deg, rgb(59, 59, 59),rgb(125, 125, 125)),linear-gradient(22.5deg, rgb(34, 118, 254) 0%, rgb(34, 118, 254) 27%,rgb(45, 113, 222) 27%, rgb(45, 113, 222) 41%,rgb(57, 108, 190) 41%, rgb(57, 108, 190) 48%,rgb(68, 103, 157) 48%, rgb(68, 103, 157) 64%,rgb(80, 98, 125) 64%, rgb(80, 98, 125) 65%,rgb(91, 93, 93) 65%, rgb(91, 93, 93) 100%),linear-gradient(112.5deg, rgb(34, 118, 254) 0%, rgb(34, 118, 254) 27%,rgb(45, 113, 222) 27%, rgb(45, 113, 222) 41%,rgb(57, 108, 190) 41%, rgb(57, 108, 190) 48%,rgb(68, 103, 157) 48%, rgb(68, 103, 157) 64%,rgb(80, 98, 125) 64%, rgb(80, 98, 125) 65%,rgb(91, 93, 93) 65%, rgb(91, 93, 93) 100%),linear-gradient(157.5deg, rgb(34, 118, 254) 0%, rgb(34, 118, 254) 27%,rgb(45, 113, 222) 27%, rgb(45, 113, 222) 41%,rgb(57, 108, 190) 41%, rgb(57, 108, 190) 48%,rgb(68, 103, 157) 48%, rgb(68, 103, 157) 64%,rgb(80, 98, 125) 64%, rgb(80, 98, 125) 65%,rgb(91, 93, 93) 65%, rgb(91, 93, 93) 100%); background-blend-mode:overlay, overlay, overlay, normal;  animation: magicFloat 6s infinite ease-in-out;
+}
+
+.small-magic-calendar:hover {
+  transform: rotateX(0deg) scale(1.03);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
+}
+
+/* ✨ Month Name Styling */
+.month-name {
+  font-size: 1.6dvb;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+/* 📅 Responsive Calendar Grid */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🗓 Small Day Names */
+.day-name {
+  font-size: 1.7dvb;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+/* 🔮 Magic Days */
+.day {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6dvb;
+  font-weight: bold;
+  color: #ffffff;
+  border-radius: 6px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.285);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+/* 🟢 Highlight Today's Date */
+.today {
+background-color: #02ff0f;
+  color: rgb(3, 6, 51);
+  padding: 5px;
+  box-shadow: 0 0 2px rgb(255, 255, 255);
+  animation: pulseGreen 2s infinite alternate;
+}
+
+/* 🌟 Magic Hover Effect */
+.day:hover {
+  transform: scale(1.1) rotateY(8deg);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 🔄 Floating Animation */
+@keyframes magicFloat {
+  0% { transform: rotateX(8deg) translateY(0px); }
+  50% { transform: rotateX(10deg) translateY(-6px); }
+  100% { transform: rotateX(8deg) translateY(0px); }
+}
+
+/* 🟢 Green Glow Animation for Today */
+@keyframes pulseGreen {
+  0% { box-shadow: 0 0 8px rgba(0, 255, 0, 0.6); }
+  100% { box-shadow: 0 0 20px rgba(0, 255, 0, 1); }
+}
+
+
+
+// Responsive Sidebar for Small Screens
+@media (max-width: 768px) {
+  .sidebar {
+    left: -$sidebar-width;
+    position: absolute;
+    z-index: 1000;
+
+    &.active {
+      left: 0;
+    }
+  }
+
+  .sidebar-clock {
+    width: 70px;
+    height: 70px;
+  }
+
+  .sidebar {
+    max-width: 100%;
+  }
+
+ 
+}
+
+@media (max-width: 480px) {
+  
+
+   .sidebar {
+    max-width: 100%;
+  }
+
+  
+}

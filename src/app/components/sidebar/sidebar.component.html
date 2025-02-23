@@ -1,1 +1,90 @@
-<p>sidebar works!</p>
+
+<nav class="sidebar" *ngIf="isFullAdmin">
+  <div class="sidebar-header">
+    <button class="close-btn d-md-none" (click)="toggleSidebar()">×</button>
+  </div>
+
+  <!-- Analog Clock -->
+  <div class="sidebar-clock">
+    <svg id="clock-face" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="48" stroke="white" stroke-width="0.1" fill="transparent"/>
+      <text x="50" y="15" text-anchor="middle" fill="white" font-size="11">12</text>
+      <text x="88" y="51" text-anchor="middle" fill="white" font-size="11">3</text>
+      <text x="50" y="90" text-anchor="middle" fill="white" font-size="11">6</text>
+      <text x="9" y="50" text-anchor="middle" fill="white" font-size="11">9</text>
+      <line id="hour-hand" x1="50" y1="50" x2="50" y2="30" stroke="white" stroke-width="2"/>
+      <line id="minute-hand" x1="50" y1="50" x2="50" y2="20" stroke="white" stroke-width="2"/>
+      <line id="second-hand" x1="50" y1="50" x2="50" y2="15" stroke="red" stroke-width="2"/>
+      <circle cx="50" cy="50" r="2" fill="white"/>
+    </svg>
+  </div>
+
+  <ul class="nav-list">
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/dashboard" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-house-door"></i> Dashboard
+      </a>
+    </li>
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/map" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-geo-alt"></i> City Map
+      </a>
+    </li>
+    
+    <!-- Restricted Items (Only FullAdmin Can See) -->
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/users" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-people"></i> Users
+      </a>
+    </li>
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/notifications" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-bell"></i> Notifications
+      </a>
+    </li>
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/city-sections" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-building"></i> City Sections
+      </a>
+    </li>
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/reports" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-file-earmark-text"></i> Reports
+      </a>
+    </li>
+    
+    <li *ngIf="isFullAdmin">
+      <a routerLink="/settings" routerLinkActive="active" (click)="closeSidebar()">
+        <i class="bi bi-gear"></i> Settings
+      </a>
+    </li>
+
+    <!--  Language Switch -->
+    <li *ngIf="isFullAdmin">
+      <div class="language-switch">
+        <button class="btn btn-outline-light me-3" (click)="changeLanguage('en')">EN</button>
+        <button class="btn btn-outline-light" (click)="changeLanguage('de')">DE</button>
+      </div>
+    </li>
+
+    <!-- Logout -->
+    <li *ngIf="isFullAdmin">
+      <button class="btn btn-danger logout-btn w-75 mb-1 mt-2" (click)="logout()">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </button>
+    </li>
+  </ul>
+
+  <!--  Full Calendar -->
+  <div class="small-magic-calendar">
+    <div class="month-name">Feb 2025</div>
+    <div class="calendar-grid">
+      <div class="day-name">S</div><div class="day-name">M</div><div class="day-name">T</div>
+      <div class="day-name">W</div><div class="day-name">T</div><div class="day-name">F</div><div class="day-name">S</div>
+
+      <div *ngFor="let day of days" [ngClass]="{'today': day === currentDay, 'day': true}">
+        {{ day }}
+      </div>
+    </div>
+  </div>
+</nav>
