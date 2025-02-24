@@ -14,6 +14,11 @@ The **City Management Dashboard** is a **modern, interactive, and fully responsi
 - **🚀 Deployed with Docker**: Easily deployable with Docker and Docker Compose.
 
 ---
+<img width="950" alt="Image" src="https://github.com/user-attachments/assets/ba1c7f43-b52e-4a09-9b49-c8ac9fcbfaa9" />
+
+<img width="950" alt="Image" src="https://github.com/user-attachments/assets/8d5d560b-e434-44b9-8fb2-3cb015a0b440" />
+
+<img width="951" alt="Image" src="https://github.com/user-attachments/assets/6fafd069-26a1-457b-a0fb-5664402122e6" />
 
 ## 🏗️ Project Structure
 ```
